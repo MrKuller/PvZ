@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PvZ</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute;
+			transition: 1s;	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			margin-left:1500px;
+			transition: 1s;
+		}
+		.ochki {
+			position: absolute;
+			font-size: 30px;
+			margin-left: 740px;
+			margin-top: 45px;
+		}
+		.end {
+			width:100%;
+			height:1000px;
+			display: none;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>	
+	<div>
+		<img src='end.jpg' class='end'>
+	</div>
+	<div class="box" style="">
+		<div class='ochki'>Твои очки: <span class='score1'>0</span></div>
+
+		<h5 style="position: absolute; left: 600px; top: 50px" class="score"></h5>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px;margin-left:590px ">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px;margin-left:590px ">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px;margin-left:590px ">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px;margin-left:590px ">
+		<img class="shooter" src="peashooter.png"  style="top: 650px;margin-left:590px ">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px">
+		<img class="zombies" src="zombie2.png" style="top: 320px">
+		<img class="zombies" src="zombie2.png" style="top: 420px">
+		<img class="zombies" src="zombie4.png" style="top: 520px">
+		<img class="zombies" src="zombie4.png" style="top: 620px">
+	</div>
+<script>
+let zw0 = 1500
+let zw1 = 1500
+let zw2 = 1500
+let zw3 = 1500
+let zw4 = 1500
+
+let sc = document.querySelector('.score1')
+let score = 0
+let oc = document.querySelector('.ochki')
+let end = document.querySelector('.end')
+
+let plnt = document.querySelectorAll('.shooter')
+let zom = document.querySelectorAll('.zombies')
+
+zom[0].onclick = function() {
+	zw0 = zw0 - 100
+	zom[0].style.marginLeft = zw0 + 'px'
+	if(zw0 == 600){
+		plnt[0].style.display = 'none';
+		score = score + 1
+		sc.innerHTML = score
+	}
+	if(score == 5){
+	 	end.style.display = 'block'
+	 	zom[0].style.display = 'none'
+	 	zom[1].style.display = 'none'
+	 	zom[2].style.display = 'none'
+	 	zom[3].style.display = 'none'
+	 	zom[4].style.display = 'none'
+	 	oc.style.display = 'none'
+	}	
+}
+zom[1].onclick = function() {
+	zw1 = zw1 - 100
+	zom[1].style.marginLeft = zw1 + 'px'
+	if(zw1 == 600){
+		plnt[1].style.display = 'none';
+		score = score + 1
+		sc.innerHTML = score
+	}
+	if(score == 5){
+		end.style.display = 'block'
+		zom[0].style.display = 'none'
+	 	zom[1].style.display = 'none'
+	 	zom[2].style.display = 'none'
+	 	zom[3].style.display = 'none'
+	 	zom[4].style.display = 'none'
+		oc.style.display = 'none'
+	}	
+}
+zom[2].onclick = function() {
+	zw2 = zw2 - 100
+	zom[2].style.marginLeft = zw2 + 'px'
+	if(zw2 == 600){
+		plnt[2].style.display = 'none';
+		score = score + 1
+		sc.innerHTML = score
+	}
+	if(score == 5){
+		end.style.display = 'block'
+		zom[0].style.display = 'none'
+	 	zom[1].style.display = 'none'
+	 	zom[2].style.display = 'none'
+	 	zom[3].style.display = 'none'
+	 	zom[4].style.display = 'none'
+		oc.style.display = 'none'
+	}
+}
+zom[3].onclick = function() {
+	zw3 = zw3 - 100
+	zom[3].style.marginLeft = zw3 + 'px'
+	if(zw3 == 600){
+		plnt[3].style.display = 'none';
+		score = score + 1
+		sc.innerHTML = score
+	}
+	if(score == 5){
+		end.style.display = 'block'
+		zom[0].style.display = 'none'
+	 	zom[1].style.display = 'none'
+	 	zom[2].style.display = 'none'
+	 	zom[3].style.display = 'none'
+	 	zom[4].style.display = 'none'
+		oc.style.display = 'none'
+	}
+}
+zom[4].onclick = function() {
+	zw4 = zw4 - 100
+	zom[4].style.marginLeft = zw4 + 'px'
+	if(zw4 == 600){
+		plnt[4].style.display = 'none';
+		score = score + 1
+		sc.innerHTML = score
+	}
+	if(score == 5){
+		end.style.display = 'block'
+		zom[0].style.display = 'none'
+	 	zom[1].style.display = 'none'
+	 	zom[2].style.display = 'none'
+	 	zom[3].style.display = 'none'
+	 	zom[4].style.display = 'none'
+		oc.style.display = 'none'
+	}
+}
+
+
+</script>
+</body>
+</html>
